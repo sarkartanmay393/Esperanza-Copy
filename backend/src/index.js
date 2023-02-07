@@ -38,6 +38,44 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Home root "/"
+app.get("/", async (req, res) => {
+    // let body = `
+    // <!DOCTYPE html>
+    // <html>
+    //   <head>
+    //     <title>Hello from CGEC!</title>
+    //     <style>
+    //       html {
+    //         box-sizing: border-box;
+    //       }
+    //       body {
+    //         margin; 0;
+    //         padding: 0;
+    //       }
+    //       header {
+    //        padding: 18px;
+    //        height: 100vh;
+    //        width: 100vw;
+    //        display: flex;
+    //        flex-direction: row;
+    //        justify-content: center;
+    //        align-content: center;
+    //        font-size: 24px;
+    //        font-weight: 700;
+    //       }
+    //
+    //     </style>
+    //   </head>
+    //   <body>
+    //     <header>
+    //       Hello from Esperanza Team!
+    //     </header>
+    //   </body>
+    // </html>`;
+    // res.type('html').send(body);
+    res.send("Welcome to Esperanza Backend!");
+})
 
 // Accepting GET Request
 app.get("/event/:id", async (req, res) => {
