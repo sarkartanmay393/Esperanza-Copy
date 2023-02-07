@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 
 // Dummy Data
 const events = [
@@ -33,8 +34,10 @@ const events = [
 const PORT = 8081;
 const app = express();
 
-// Using JSON Middleware
+// Using Middlewares
+app.use(cors());
 app.use(express.json());
+
 
 // Accepting GET Request
 app.get("/event/:id", async (req, res) => {
